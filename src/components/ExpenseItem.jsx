@@ -5,6 +5,7 @@ import './ExpenseItem.css';
 function ExpenseItem({ date, title, amount }) {
   return (
     <div className='expense-item'>
+      {console.log('Third ExpenseItem')}
       <ExpenseDate date={date} />
       <div className='expense-item__description'>
         <h2>{title}</h2>
