@@ -5,7 +5,6 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
   const [entertedTitle, setEnteredTitle] = useState('');
   const [entertedAmount, setEnteredAmount] = useState('');
   const [entertedDate, setEnteredDate] = useState('');
-
   const titleChangeHandler = e => {
     setEnteredTitle(e.target.value);
   };
@@ -21,8 +20,10 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
     const expenseData = {
       title: entertedTitle,
       amount: entertedAmount,
-      date: new Date(entertedDate),
+
+      date: new Date(entertedDate + 'T00:00:00'),
     };
+
     onSaveExpenseData(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
